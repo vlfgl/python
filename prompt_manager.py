@@ -71,7 +71,7 @@ def add_prompt():
     # 5. 기존 리스트에 추가하기
     prompts.append(new_prompt)
     print(f"✅ '{title}' 프롬프트가 [{category}] 카테고리에 성공적으로 추가되었습니다!")
-    
+
 def show_detail():
     print("\n=== 프롬프트 상세 보기 ===")
     
