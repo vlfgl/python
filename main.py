@@ -153,7 +153,7 @@ def search_prompt():
         print(f"경고: '{keyword}'(이)가 포함된 프롬프트를 찾을 수 없습니다.")
     else:
         print(f"\n총 {count}개의 프롬프트가 검색되었습니다.")
-        
+
 def toggle_favorite():
     print("\n=== 즐겨찾기 설정/해제 ===")
     
@@ -182,16 +182,36 @@ def toggle_favorite():
     else:
         print("경고: 숫자를 입력해주세요.")
 
+def show_favorites():
+    print("\n=== 즐겨찾기 목록 ===")
+    
+    if not prompts:
+        print("등록된 프롬프트가 없습니다.")
+        return
+
+    count = 0
+    
+    for i, p in enumerate(prompts):
+        if p["favorite"]:  # 즐겨찾기가 True인 것만 출력
+            print(f"{i + 1}. [{p['category']}] {p['title']} ⭐")
+            count += 1
+
+    if count == 0:
+        print("즐겨찾기된 프롬프트가 없습니다.")
+    else:
+        print(f"\n총 {count}개의 즐겨찾기 프롬프트가 있습니다.")
+
 def main():
     while True:
         print("\n[ 메뉴를 선택하세요 ]")
-        print("1. 목록 보기")
-        print("2. 프롬프트추가")
-        print("3. 상세보기")
+        print("1. 프롬프트 목록")
+        print("2. 프롬프트 추가")
+        print("3. 프롬프트 상세보기")
         print("4. 카테고리별 조회")
-        print("5. 검색")
+        print("5. 프롬프트 검색")
         print("6. 즐겨찾기 설정/해제")
-        print("7. 종료")
+        print("7. 즐겨찾기 목록")
+        print("8. 종료")
         
         choice = input("선택: ")
 
@@ -208,6 +228,8 @@ def main():
         elif choice == "6":
             toggle_favorite() # 즐겨찾기 설정/해제
         elif choice == "7":
+            show_favorites() # 즐겨찾기 목록
+        elif choice == "8":
             print("프로그램을 종료합니다. 안녕히 가세요!")
             break
         else:
