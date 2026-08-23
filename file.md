@@ -57,3 +57,11 @@ prompts = [
 ## **git log --oneline --graph 결과 스크린샷**
 
 <img width="593" height="358" alt="image" src="https://github.com/user-attachments/assets/cf150269-ee72-4523-9177-087443cab37e" />
+
+
+## **⚙️ 개발 환경 (Environment)**
+- **IDE**: Visual Studio Code
+- **Language**: Python 3.13.15
+- **Version Control**: Git & GitHub<br>
+
+  <img width="331" height="113" alt="image" src="https://github.com/user-attachments/assets/e500824c-e330-41b9-a8a0-b1aa59481636" />
