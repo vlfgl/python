@@ -112,6 +112,7 @@ def show_by_category():
         return
 
     # 1. 고정된 카테고리 목록 보여주기
+    # 새로운 카테고리를 추가하거나 변경하려면 아래 리스트를 수정해주세요
     categories = ["텍스트 생성", "이미지 생성", "영상 생성", "페르소나", "자동화", "기타"]
     for i, cat in enumerate(categories, 1):
         print(f"{i}) {cat}")
