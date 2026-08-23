@@ -1,5 +1,5 @@
 
-###  **프로그램 실행 스크린샷**
+##  **프로그램 실행 스크린샷**
 - **메뉴 화면**
 <img width="495" height="191" alt="image" src="https://github.com/user-attachments/assets/7580117e-89f5-4691-aeca-dd7d72d10aad" />
 
