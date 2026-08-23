@@ -58,6 +58,7 @@ prompts = [
 
 <img width="593" height="358" alt="image" src="https://github.com/user-attachments/assets/cf150269-ee72-4523-9177-087443cab37e" />
 
+- 브랜치 생성, 병합
 
 ## **⚙️ 개발 환경 (Environment)**
 - **IDE**: Visual Studio Code
