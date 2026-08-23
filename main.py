@@ -1,3 +1,4 @@
+# 브랜치 생성!
 prompts = [
     {
         "title": "블로그 글 작성 도우미",
@@ -78,7 +79,7 @@ def show_detail():
             # 사용자는 1번부터 보지만, 파이썬 리스트는 0번부터 시작하므로 -1을 해줍니다!
             p = prompts[num - 1] 
             
-            fav_icon = "⭐" if p["favorite"] else "☆" # 즐겨찾기가 아니면 빈 별 표시
+            fav_icon = "⭐" if p["favorite"] else "" # 즐겨찾기가 아니면 빈 별 표시
             
             print("\n-----------------------------------")
             print(f"제목: {p['title']} {fav_icon}")
