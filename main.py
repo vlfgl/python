@@ -40,25 +40,38 @@ def add_prompt():
     # 1. 사용자에게 정보 입력받기
     title = input("제목을 입력하세요: ")
     content = input("내용을 입력하세요: ")
-    category = input("카테고리를 입력하세요 (예: 텍스트 생성, 이미지 생성, 기타): ")
 
     # 2. 입력값 검증 (제목이나 내용을 안 적었을 경우 방지)
     if not title or not content:
         print("경고: 제목과 내용은 필수 입력 사항입니다. 추가가 취소되었습니다.")
         return  # 함수를 여기서 종료합니다.
 
-    # 3. 새로운 딕셔너리 만들기
+    # 3. 카테고리 선택 기능 (새로 추가된 부분!)
+    print("\n[카테고리 선택]")
+    categories = ["텍스트 생성", "이미지 생성", "영상 생성", "페르소나", "자동화", "기타"]
+    for i, cat in enumerate(categories, 1):
+        print(f"{i}) {cat}")
+        
+    choice_str = input("번호를 선택하세요 (엔터 입력 시 '기타'로 설정됨): ")
+    
+    # 사용자가 올바른 숫자를 입력했는지 확인
+    if choice_str.isdigit() and 1 <= int(choice_str) <= len(categories):
+        category = categories[int(choice_str) - 1]
+    else:
+        category = "기타"  # 잘못된 번호나 빈칸을 입력하면 자동으로 '기타' 설정
+
+    # 4. 새로운 딕셔너리 만들기
     new_prompt = {
         "title": title,
         "content": content,
-        "category": category if category else "기타",  # 카테고리를 안 적으면 '기타'로 설정
+        "category": category,
         "favorite": False  # 새로 추가한 건 기본적으로 즐겨찾기 해제 상태
     }
 
-    # 4. 기존 리스트에 추가하기
+    # 5. 기존 리스트에 추가하기
     prompts.append(new_prompt)
-    print(f"✅ '{title}' 프롬프트가 성공적으로 추가되었습니다!")
-
+    print(f"✅ '{title}' 프롬프트가 [{category}] 카테고리에 성공적으로 추가되었습니다!")
+    
 def show_detail():
     print("\n=== 프롬프트 상세 보기 ===")
     
