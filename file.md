@@ -25,9 +25,9 @@
 - **즐겨찾기 목록**<br>
   <img width="411" height="124" alt="image" src="https://github.com/user-attachments/assets/55e9aa17-04d6-4693-bf94-2e408bc34c95" />
 
-- **데이터 구조**<br>
-  
-  prompts = [
+## **데이터 구조**
+```text
+prompts = [
     {
         "title": "SEO 최적화 블로그 글 작성",
         "content": "다음 요소를 반영하여 블로그 글을 작성해줘.\n- 서론-본론-결론 구조\n- 3개 이상의 소제목(마크다운 헤딩) 구성\n- 결론부 CTA(행동유도) 강조\n- 충분한 본문 분량 확보",
@@ -47,8 +47,13 @@
         "favorite": True
     }
 ]
-## **git log --oneline --graph**
+```
+
+
+
+
+
+
+**git log --oneline --graph 결과 스크린샷**
 
 <img width="593" height="358" alt="image" src="https://github.com/user-attachments/assets/cf150269-ee72-4523-9177-087443cab37e" />
-
-
