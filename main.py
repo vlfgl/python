@@ -1,4 +1,3 @@
-# 브랜치 생성!
 prompts = [
     {
         "title": "블로그 글 작성 도우미",
@@ -19,7 +18,7 @@ prompts = [
         "favorite": False
     }
 ]
-# 브랜치 테스트
+
 # 목록 보기 함수 정의
 def show_list():
     print("=== 프롬프트 목록 ===")
@@ -98,22 +97,39 @@ def show_by_category():
         print("등록된 프롬프트가 없습니다.")
         return
 
-    # 1. 찾고 싶은 카테고리 입력받기
-    search_category = input("조회할 카테고리를 입력하세요 (예: 텍스트 생성, 번역): ")
-    
-    found = False  # 일치하는 항목을 찾았는지 기억하는 변수(깃발 역할)
+    # 1. 고정된 카테고리 목록 보여주기
+    categories = ["텍스트 생성", "이미지 생성", "영상 생성", "페르소나", "자동화", "기타"]
+    for i, cat in enumerate(categories, 1):
+        print(f"{i}) {cat}")
+        
+    # 2. 사용자에게 번호 입력받기
+    choice_str = input("선택: ")
 
-    # 2. 전체 프롬프트를 하나씩 확인하기
-    for i, p in enumerate(prompts):
-        if p["category"] == search_category:  # 카테고리가 일치하면
-            fav_icon = "⭐" if p["favorite"] else ""
-            # i + 1을 해서 원본 목록과 똑같은 번호를 보여줍니다.
-            print(f"{i + 1}. [{p['category']}] {p['title']} {fav_icon}")
-            found = True  # 찾았다고 깃발을 듭니다!
-
-    # 3. 다 뒤졌는데도 못 찾았을 경우
-    if not found:
-        print(f"경고: '{search_category}' 카테고리에 해당하는 프롬프트가 없습니다.")
+    if choice_str.isdigit():
+        choice = int(choice_str)
+        
+        # 입력한 번호가 1~6 사이인지 확인
+        if 1 <= choice <= len(categories):
+            selected_category = categories[choice - 1]
+            print(f"\n[{selected_category}] 카테고리 프롬프트:")
+            
+            count = 0  # 찾은 개수를 세기 위한 변수
+            
+            for i, p in enumerate(prompts):
+                if p["category"] == selected_category:
+                    fav_icon = "⭐" if p["favorite"] else ""
+                    print(f"{i + 1}. {p['title']} {fav_icon}")
+                    count += 1
+            
+            # 3. 결과 출력 (개수 포함)
+            if count == 0:
+                print("해당 카테고리에 등록된 프롬프트가 없습니다.")
+            else:
+                print(f"\n총 {count}개의 프롬프트")
+        else:
+            print("경고: 목록에 있는 번호를 선택해주세요.")
+    else:
+        print("경고: 숫자를 입력해주세요.")
 
 def search_prompt():
     print("\n=== 프롬프트 검색 ===")
