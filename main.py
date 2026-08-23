@@ -138,23 +138,22 @@ def search_prompt():
         print("등록된 프롬프트가 없습니다.")
         return
 
-    # 1. 검색할 단어 입력받기
     keyword = input("검색어를 입력하세요: ")
     
-    found = False  # 검색 결과가 있는지 확인하는 깃발
+    count = 0  # 검색된 개수를 세는 변수
 
-    # 2. 전체 프롬프트를 하나씩 확인하기
     for i, p in enumerate(prompts):
-        # 핵심! keyword가 제목(title)에 있거나(or) 내용(content)에 있으면 True
         if keyword in p["title"] or keyword in p["content"]:
             fav_icon = "⭐" if p["favorite"] else ""
             print(f"{i + 1}. [{p['category']}] {p['title']} {fav_icon}")
-            found = True  # 찾았다고 깃발 들기!
+            count += 1  # 찾을 때마다 1씩 증가
 
-    # 3. 검색 결과가 없을 경우
-    if not found:
+    # 검색 결과 출력
+    if count == 0:
         print(f"경고: '{keyword}'(이)가 포함된 프롬프트를 찾을 수 없습니다.")
-
+    else:
+        print(f"\n총 {count}개의 프롬프트가 검색되었습니다.")
+        
 def toggle_favorite():
     print("\n=== 즐겨찾기 설정/해제 ===")
     
