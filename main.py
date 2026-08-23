@@ -19,7 +19,7 @@ prompts = [
         "favorite": False
     }
 ]
-
+# 브랜치 테스트
 # 목록 보기 함수 정의
 def show_list():
     print("=== 프롬프트 목록 ===")
