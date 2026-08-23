@@ -54,6 +54,6 @@ prompts = [
 
 
 
-**git log --oneline --graph 결과 스크린샷**
+## **git log --oneline --graph 결과 스크린샷**
 
 <img width="593" height="358" alt="image" src="https://github.com/user-attachments/assets/cf150269-ee72-4523-9177-087443cab37e" />
